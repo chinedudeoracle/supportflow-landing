@@ -1,81 +1,196 @@
+/* ================= BODY & GLOBAL ================= */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    background: #f9fafc;
+    color: #333;
 }
 
-/* NAVBAR */
+h1, h2, h3 {
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ================= NAVBAR ================= */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.navbar a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: black;
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #007BFF;
 }
 
-/* HERO */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #333;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+/* ================= HERO ================= */
 .hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to right, #4facfe, #00f2fe);
-  color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
 }
 
 .hero h2 {
-  font-size: 40px;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 
 .btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: black;
-  color: white;
-  text-decoration: none;
+    display: inline-block;
+    padding: 14px 30px;
+    background: #007BFF;
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
 }
 
-/* FEATURES */
-.features {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.feature-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.feature-box {
-  width: 250px;
-  margin: 15px;
-  padding: 20px;
-  border: 1px solid #ddd;
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  padding: 60px;
-  background: #f4f4f4;
-  text-align: center;
-}
-
-/* CTA */
-.cta {
-  padding: 60px;
-  text-align: center;
-  background: black;
-  color: white;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-}
 .btn:hover {
-  opacity: 0.8;
+    background: #0056b3;
+}
+
+/* ================= SECTIONS ================= */
+section {
+    padding: 60px 20px;
+}
+
+/* ================= FEATURES / SERVICES ================= */
+.features, .services, .projects {
+    text-align: center;
+}
+
+.feature-container, .service-container, .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.feature-box, .service-box, .project-box, .price-box {
+    width: 260px;
+    padding: 25px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.feature-box:hover, .service-box:hover, .project-box:hover, .price-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* ================= PRICING ================= */
+.price-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.price-box p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================= TESTIMONIALS ================= */
+.testimonials {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    text-align: center;
+    font-style: italic;
+}
+
+/* ================= CTA ================= */
+.cta {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    border-radius: 6px;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+    background: #141e30;
+    color: white;
+}
+
+.contact-box {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #f9fafc;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .feature-container, .service-container, .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
